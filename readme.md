@@ -1,8 +1,8 @@
-# An elementary Theme for Firefox Quantum
+# An Safari Theme for Firefox Quantum
 
-![Screenshot](screenshot@2x.png)
+![Screenshot](screenshot@2x.jpg)
 
-This userChrome.css mimics the [elementary GTK+ theme](https://github.com/elementary/stylesheet) to make firefox blend in better in elementary OS.
+This userChrome.css mimics the Safari theme to make firefox blend in better in Gnome OSX themes.
 
 ## How to use
 1. Go to [about:support](about:support) in Firefox
