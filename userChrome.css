@@ -27,21 +27,22 @@
   margin: 0px !important;
   position: relative !important;
   display: flex !important;
-  width: calc(100vw - 6px) !important;
+  width: 100px !important;
   height: 25px !important;
-  align-items: center !important;
   justify-content: space-between !important;
 
   z-index: 1 !important;
 }
-#titlebar-content {
-  direction: rtl;
-}
+
 #titlebar-close,
-#titlebar-max {
+#titlebar-max,
+#titlebar-min {
   pointer-events: auto !important; /* clickable */
 }
-
+#titlebar-max,
+#titlebar-min {
+  filter:invert(100%);
+}
 /*
  * Navbar
  */
@@ -53,13 +54,13 @@
 }
 #nav-bar{
   height: 47px !important;
-  padding: 0px 45px 0px 45px !important;
+  padding: 0px 130px 0px 15px !important;
 
-  background: linear-gradient(#e6e6e6, #d0d0d0) !important;
+  background: #d7d6d7 !important;
   border-top-left-radius: 4px !important;
   border-top-right-radius: 4px !important;
   border-top-width: 0px !important;
-  border-bottom: 1px solid #979797 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.3) !important;
   box-shadow:
         inset 0 1px 0 0 rgba(255,255,255, 0.2),
         inset 0 -1px 0 0 rgba(255,255,255, 0.2) !important;
@@ -74,14 +75,12 @@
   margin-bottom: 11px !important;
   max-height: 25px !important;
   min-height: 25px !important;
-
-  background: linear-gradient(to bottom, #eee, #fff) !important;
+  font-size: 14px;
+  background: linear-gradient(to bottom, #fff, #f3f3f3) !important;
   background-clip: padding-box !important;
-  border: 1px solid rgba(0,0,0, 0.25) !important;
-  border-radius: 2.5px !important;
-  box-shadow: 
-              inset 0 0 0 1px rgba(0,0,0, 0.06),
-              0 1px 0 0 rgba(255,255,255, 0.3) !important;
+  border: 1px solid rgba(0,0,0, 0.2) !important;
+  border-bottom:1px solid rgba(0,0,0, 0.3) !important; 
+  border-radius: 5px !important;
 }
 /* urlbar suggestions popup */
 #PopupAutoCompleteRichResult {
@@ -162,7 +161,9 @@ toolbar .toolbarbutton-1:active > .toolbarbutton-icon {
   height: 28px !important;
   padding: 2px !important;
   border-radius: 50% !important;
+
 }
+
 #PanelUI-button {
   border: none !important;
 }
@@ -182,9 +183,8 @@ toolbar .toolbarbutton-1:active > .toolbarbutton-icon {
   display: flex !important;
   /* justify-content: flex-end !important; */
 
-  background: linear-gradient(#cacaca, #d5d5d5) !important;
+  background: linear-gradient(#bbbbbb, #b4b4b4) !important;
   border-bottom: 1px solid #898989 !important;
-  box-shadow: inset 0 1px 2px 1px rgba(0,0,0, 0.1) !important;
 
   direction: ltr;
 }
@@ -208,9 +208,8 @@ toolbar .toolbarbutton-1:active > .toolbarbutton-icon {
   width: 180px !important;
 }
 .tabbrowser-tab:not([visuallyselected="true"]) {
-  border-left: 1px solid transparent !important;
-  border-right: 1px solid transparent !important;
-  border-image: linear-gradient(to bottom, transparent, rgba(0,0,0, 0.1)) 1 !important;
+  border-left: 1px solid rgba(0,0,0, 0.1) !important;
+  border-right: 1px solid rgba(0,0,0, 0.1) !important;
 }
 .tabbrowser-tab:after {
   display: none !important; /* don't show border between tabs  */
@@ -219,23 +218,14 @@ toolbar .toolbarbutton-1:active > .toolbarbutton-icon {
   border-top: 1px solid none !important;
   border-left: 1px solid #898989 !important;
   border-right: 1px solid #898989 !important;
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-  box-shadow: 0 0 1px 1px rgba(0,0,0, 0.1) !important;
 }
 .tab-background {
   border-top: 0 !important;
 }
 .tab-background[selected="true"] {
   background-attachment: none !important;
-  background: linear-gradient(to bottom, #d1d1d1, #c7c7c7) !important;
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-  box-shadow:
-        inset 0 1px 0 0 rgba(255,255,255, 0.2),
-        inset 0 -1px 0 0 rgba(255,255,255, 0.2),
-        inset 1px 0 0 0 rgba(255,255,255, 0.2),
-        inset -1px 0 0 0 rgba(255,255,255, 0.2) !important;
+  background: #d7d6d7 !important;
+
 }
 #new-tab-button .toolbarbutton-icon {
   list-style-image: url("data:image/svg+xml,%3Csvg height='16' width='16' xmlns='http://www.w3.org/2000/svg'%3E%3Cg color='%235b5b5b' transform='translate%28-293 -117%29'%3E%3Cpath d='M300 120v4h-4v2h4v4h2v-4h4v-2h-4v-4z' fill='%235b5b5b' overflow='visible' style='marker:none'/%3E%3C/g%3E%3C/svg%3E") !important;
@@ -313,7 +303,7 @@ toolbar .toolbarbutton-1:active > .toolbarbutton-icon {
 #toolbar-menubar {
   -moz-box-ordinal-group: 2;
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 0px 50px 0px 0px !important;
 
   background: #d1d1d1 !important;
   border-bottom: 1px solid #898989 !important;
